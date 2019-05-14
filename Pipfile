@@ -1,11 +1,19 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.org/simple"
-verify_ssl = true
+url = "http://pypi.douban.com/simple"
+verify_ssl = false
 
 [dev-packages]
 
 [packages]
+tornado = "*"
+mysqlclient = "*"
+python-memcached = "*"
+peewee = "==2.1.0"
+simplejson = "*"
+Jinja2 = "*"
+Pillow = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "2.7"

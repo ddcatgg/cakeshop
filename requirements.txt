@@ -5,3 +5,5 @@ python-memcached
 peewee==2.1.0
 simplejson
 pillow
+
+python-dotenv
