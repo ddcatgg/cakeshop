@@ -10,6 +10,8 @@ from lib.database import Db
 from lib import uimodules
 import memcache
 
+from lib.fake_memcache import FakeMemCache
+
 settings = setting_from_object(setting)
 
 settings.update({
@@ -23,7 +25,7 @@ settings.update({
         'autoescape':None
     })
 
-memcachedb = memcache.Client([settings['memcache_host']])
+memcachedb = FakeMemCache() # memcache.Client([settings['memcache_host']])
 
 bcc = None
 if settings['debug'] == False:
