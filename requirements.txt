@@ -1,7 +1,7 @@
 tornado
 jinja2
-MySQL-python
+mysqlclient
 python-memcached
 peewee==2.1.0
 simplejson
-PIL
+pillow
