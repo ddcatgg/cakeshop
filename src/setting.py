@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 #coding=utf8
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DEBUG = True
 GZIP = True
@@ -7,8 +11,8 @@ GZIP = True
 DB_HOST= 'localhost'
 DB_PORT= 3306
 DB_USER = 'root'
-DB_PASSWD = 'password'
-DB_NAME = 'database'
+DB_PASSWD = os.getenv('DB_PASSWD')
+DB_NAME = 'cakeshop'
 
 MEMCACHE_HOST = 'localhost:11211'
 
