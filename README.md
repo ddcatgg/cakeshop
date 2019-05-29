@@ -1,3 +1,80 @@
+## 开发调试环境
+
+### 开发平台
+
+| 操作系统  | Python 版本           |
+| --------- | --------------------- |
+| Windows 7 | Python 2.7 (32位版本) |
+
+
+
+### 安装依赖包
+
+#### mysql-python
+
+这个包的安装比较麻烦，直接通过 pip 在线安装的话可能会失败，因此建议通过 whl 安装：
+
+```
+pip install dependency/MySQL_python-1.2.5-cp27-none-win32.whl
+```
+
+#### 其它依赖包
+
+```
+pip install -r requirements-exact.txt
+```
+
+
+
+### 设置数据库和缓存服务器信息
+
+```
+cd src
+vi setting.py
+```
+
+主要是修改数据库信息，可将数据库密码设置到 DB_PASSWD 环境变量。
+
+或在项目目录下建立一个 .env 文件：
+
+```
+DB_PASSWD=123456
+```
+
+写入数据库密码。
+
+
+
+### 初始化数据库
+
+首先确保 MySQL 中已创建好 `setting.py` 中 `DB_NAME` 所指定的数据库。
+
+```
+python manager.py --cmd=syncdb
+```
+
+
+
+### 运行
+
+```
+python manager.py
+```
+
+打开浏览器，输入 http://127.0.0.1:8080 打开网站。
+
+使用管理员账号 root，密码 111111 登录。
+
+管理员登录后，需要在管理商品里面添加商品，并添加地区，否则客户无法下单。
+
+普通客户账号可通过注册功能自由注册。
+
+
+
+
+
+## 生产环境
+
 系统要求：
 nginx
 centos 6.x
